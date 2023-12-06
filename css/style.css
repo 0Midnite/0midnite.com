@@ -2,6 +2,8 @@ body {
     background-color: #000;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
   
 .centered-text {
@@ -40,7 +42,7 @@ body {
 
 button {
     background-color: #101010;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
     border: none;
     color: #fff;
     border-radius: 7px;
@@ -65,7 +67,8 @@ h2 {
 a {
 	color: #ddd;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
+    cursor: none;
 }
 
 a:hover {
@@ -74,9 +77,32 @@ a:hover {
 
 .icon {
     filter: invert(100%) grayscale(100%);
-    transition: filter 0.3s ease;
+    transition: filter 0.3s;
+    transition: transform 0.3s;
 }
 
 .icon:hover {
-    filter: invert(50%) grayscale(100%);
+    filter: invert(75%) grayscale(100%);
+    transform: scale(1.2);
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+html {
+    cursor: none;
+}
+
+.fade-in {
+    opacity: 1;
 }

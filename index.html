@@ -12,10 +12,12 @@
     <meta content="#000" data-react-helmet="true" name="theme-color"/>
   </head>
   <body>
+    <div class="custom-cursor"></div>
     <header>
       <div class="container">
         <div class="centered-text">
-          <img src="/images/0.jpg" style="width: 160px; height: 160px;">
+          <img src="/images/0.jpg" class="zero" style="width: 160px; height: 160px;">
+          <hr>
           <div>
             <a href="https://youtube.com/@0Midnite?sub_confirmation=1" target="_blank">
               <img src="/images/youtube.svg" alt="youtube" width="24" height="24" class="icon">
@@ -45,5 +47,49 @@
         </div>
       </div>  
     </header>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const customCursor = document.querySelector('.custom-cursor');
+        let isCursorHidden = false;
+  
+        document.addEventListener('mousemove', function (e) {
+          const x = e.clientX;
+          const y = e.clientY;
+          
+          customCursor.style.left = x + 'px';
+          customCursor.style.top = y + 'px';
+        });
+        
+        document.addEventListener('mouseenter', function () {
+          customCursor.style.opacity = 1;
+        });
+        
+        document.addEventListener('mouseleave', function () {
+          if (!isCursorHidden) {
+            customCursor.style.opacity = 0;
+          }
+        });
+        
+        document.addEventListener('mousedown', function () {
+          customCursor.style.transform = 'scale(0.5)';
+        });
+        
+        document.addEventListener('mouseup', function () {
+          customCursor.style.transform = 'scale(1)';
+          isCursorHidden = false;
+        });
+  
+        document.addEventListener('contextmenu', function (e) {
+          e.preventDefault();
+          customCursor.style.opacity = 0;
+          isCursorHidden = true;
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('fade-in');
+      });
+    </script>
   </body>
 </html>
