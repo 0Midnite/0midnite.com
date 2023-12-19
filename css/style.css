@@ -1,10 +1,11 @@
 body {
     background-color: #000;
     color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "rubik";
     opacity: 0;
     transition: opacity 1s ease-in-out;
     user-select: none;
+    margin: 0;
 }
   
 .centered-text {
@@ -106,4 +107,14 @@ html {
 
 .fade-in {
     opacity: 1;
+}
+
+.zero {
+    width: 160px;
+    height: 160px;
+    transition: transform 0.3s ease;
+}
+
+.zero:hover {
+    transform: scale(1.2);
 }
