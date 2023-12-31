@@ -13,38 +13,57 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto&family=Rubik&display=swap" rel="stylesheet">
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <body>
     <div class="custom-cursor"></div>
     <header>
       <div class="container">
         <div class="centered-text">
-          <img src="/images/0.png" class="zero" style="width: 160px; height: 160px;">
-          <hr>
+          <!--<img src="/images/0.png" class="zero" style="width: 160px; height: 160px;">-->
+          <b><p class="huge-text">0Midnite</p></b>
           <div>
-            <a href="#" onclick="fadeoutredirect('https://youtube.com/@0Midnite?sub_confirmation=1')">
+            <a onclick="fadeoutredirect('https://youtube.com/@0Midnite?sub_confirmation=1')">
               <img src="/images/youtube.svg" alt="youtube" width="24" height="24" class="icon">
             </a>
-            <a href="#" onclick="fadeoutredirect('https://twitter.com/0Midnite_')">
+            <a onclick="fadeoutredirect('https://twitter.com/0Midnite_')">
               <img src="/images/twitter.svg" alt="twitter" width="24" height="24" class="icon">
             </a>
-            <a href="#" onclick="fadeoutredirect('https://discord.gg/Rkr8afVVkq')">
+            <a onclick="fadeoutredirect('https://discord.gg/Rkr8afVVkq')">
               <img src="/images/discord.svg" alt="discord" width="24" height="24" class="icon">
             </a>
-            <a href="#" onclick="fadeoutredirect('https://github.com/0Midnite')">
+            <a onclick="fadeoutredirect('https://github.com/0Midnite')">
               <img src="/images/github.svg" alt="github" width="24" height="24" class="icon">
             </a>
-            <a href="#" onclick="fadeoutredirect('https://tiktok.com/@0midnite')">
+            <a onclick="fadeoutredirect('https://tiktok.com/@0midnite')">
               <img src="/images/tiktok.svg" alt="tiktok" width="24" height="24" class="icon">
             </a>
-            <a href="#" onclick="fadeoutredirect('https://ko-fi.com/0midnite')">
+            <a onclick="fadeoutredirect('https://ko-fi.com/0midnite')">
               <img src="/images/kofi.svg" alt="ko-fi" width="24" height="24" class="icon">
             </a>
-            <a href="#" onclick="fadeoutredirect('https://mail.google.com/mail/?view=cm&fs=1&to=0Midnite@0Midnite.com')">
+            <a onclick="fadeoutredirect('https://mail.google.com/mail/?view=cm&fs=1&to=0Midnite@0Midnite.com')">
               <img src="/images/email.svg" alt="email" width="24" height="24" class="icon">
             </a>
-            <a href="#" onclick="fadeoutredirect('https://cdn.0midnite.com')">
+            <a onclick="fadeoutredirect('https://cdn.0midnite.com')">
               <img src="/images/cdn.svg" alt="cdn" width="24" height="24" class="icon">
             </a>
+            <hr>
+            <h2 id="countdown"></h2>
+            <script>
+              const countdowndate = new Date("january 1, 2024 00:00:00").getTime();
+              const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countdowndate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                if (distance < 0) {
+                  clearInterval(x);
+                  document.getElementById("countdown").innerHTML = "happy new year!";
+                }
+              }, 1000);
+            </script>
           </div>
         </div>
       </div>  

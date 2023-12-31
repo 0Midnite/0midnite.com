@@ -3,7 +3,7 @@ body {
     color: #fff;
     font-family: "rubik";
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity .3s ease-in-out;
     user-select: none;
     margin: 0;
 }
@@ -79,8 +79,7 @@ a:hover {
 
 .icon {
     filter: invert(100%) grayscale(100%);
-    transition: filter 0.3s;
-    transition: transform 0.3s;
+    transition: transform 0.3s, filter 0.3s;
 }
 
 .icon:hover {
@@ -117,4 +116,16 @@ html {
 
 .zero:hover {
     transform: scale(1.2);
+}
+
+.cooltext {
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    background-image: linear-gradient(to right, #8c00ff, #7d11af);
+}
+
+.huge-text {
+    transform: scale(6);
+    margin: 40px
 }

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let mousey = 0;
   let cursorx = 0;
   let cursory = 0;
-  const easingfactor = 0.1;
+  const easingfactor = 1;
 
   document.addEventListener('mousemove', function (e) {
     mousex = e.clientX;
@@ -63,5 +63,5 @@ function fadeoutredirect(url) {
   document.body.style.opacity = '0';
   setTimeout(function() {
     window.location.href = url;
-  }, 1000);
+  }, 300);
 }
