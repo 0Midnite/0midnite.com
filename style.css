@@ -2,7 +2,6 @@ body {
     background-color: #000;
     color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    opacity: 0;
     transition: opacity .3s ease-in-out;
     margin: 0;
 }
@@ -73,25 +72,4 @@ a:hover {
 .icon:hover {
     filter: invert(75%) grayscale(100%);
     transform: scale(1.2);
-}
-
-.fade-in {
-    opacity: 1;
-}
-
-.zero {
-    width: 160px;
-    height: 160px;
-    transition: transform 0.3s ease;
-}
-
-.zero:hover {
-    transform: scale(1.2);
-}
-
-.cooltext {
-    background-clip: text;
-    color: transparent;
-    display: inline-block;
-    background-image: linear-gradient(to right, #8c00ff, #7d11af);
 }

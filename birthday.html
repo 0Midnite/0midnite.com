@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>birthday countdown</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="icon" href="img/bday.jpg">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="centered-text">
+                    <h1 id="countdown"></h1>
+                </div>
+            </div>
+        </header>
+
+        <script>
+            function gettimeuntil() {
+                const now = new Date();
+                const may23rd = new Date(now.getFullYear(), 4, 23);
+                if (now.getMonth() > 4 || (now.getMonth() === 4 && now.getDate() > 23)) {
+                    may23rd.setFullYear(now.getFullYear() + 1);
+                }
+                const timeuntil = may23rd.getTime() - now.getTime();
+                return timeuntil;
+            }
+
+            function updatecountdown() {
+                const countdownelement = document.getElementById('countdown');
+                const timeleft = gettimeuntil();
+                if (timeleft <= 0) {
+                    countdownelement.textContent = "it's my birthday! 🎂";
+                } else {
+                    const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+                    countdownelement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                }
+            }
+
+            setInterval(updatecountdown, 100);
+            updatecountdown();
+        </script>
+    </body>
+</html>
